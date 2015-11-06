@@ -126,6 +126,9 @@ namespace ApiDemo.ApiService
             string username = json["userName"].ToString();
             var myuser = db.AspNetUsers.Single(u => u.UserName == username);
 
+
+       
+
             return Json(new
             {
                 Code = 10000,
@@ -291,7 +294,18 @@ namespace ApiDemo.ApiService
             });
         }
 
+
+
+
+
+
         #endregion
+
+
+
+     
+       
+
 
 
     }

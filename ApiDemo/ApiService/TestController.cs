@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web;
 
 namespace ApiDemo.ApiService
 {
@@ -38,6 +39,25 @@ namespace ApiDemo.ApiService
                       uuu = model.uu
                   }
               });
+          }
+
+         [HttpGet]
+         [Route("xxxx")]
+         [Authorize]
+         public int xxxx()
+          {
+              ApiDemo.DataAccess.DataBaseEntities db = new DataAccess.DataBaseEntities();
+              var i = db.AspNetUsers.Count();
+
+
+              
+             HttpContext.Current.Application.Lock();
+             int result = (int)(HttpContext.Current.Application["count"] ?? 0);
+             HttpContext.Current.Application["count"] = ++result;
+             HttpContext.Current.Application.UnLock();
+              
+              return result;
+
           }
     }
 }

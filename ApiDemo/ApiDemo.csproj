@@ -248,6 +248,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\BlobHelper.cs" />
+    <Compile Include="Infrastructure\CacheHelper.cs" />
     <Compile Include="Infrastructure\UtilityHelper.cs" />
     <Compile Include="Infrastructure\UtilityString.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -382,6 +383,16 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ApiDemo.DataAccess\ApiDemo.DataAccess.csproj">
+      <Project>{1a575e4b-7f82-4efd-a1be-9b13108ca6b3}</Project>
+      <Name>ApiDemo.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ApiDemo.WebAccess\ApiDemo.WebAccess.csproj">
+      <Project>{70b5ad59-11cd-4990-aa82-e06f9a047572}</Project>
+      <Name>ApiDemo.WebAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
